@@ -504,7 +504,7 @@
 
             <div class="info-card">
                 <div class="tags-container">
-                    <span class="tag-item">网瘾</span>
+                    <span class="tag-item">摆烂</span>
                     <span class="tag-item">菜比</span>
                     <span class="tag-item">网页</span>
                     <span class="tag-item">Python</span>
@@ -575,12 +575,10 @@
             const imageFolder = isMobile ? './static/backscreen/phone/' : './static/backscreen/pc/';
             const imageCount = 10;
             const randomNum = Math.floor(Math.random() * imageCount) + 1;
-            
-            // 预加载背景图片
+
             const bgImage = new Image();
             const bgUrl = imageFolder + randomNum + '.jpg';
-            
-            // 立即开始预加载图片
+
             bgImage.src = bgUrl;
             
             function hideLoading() {
@@ -592,14 +590,12 @@
                     }, 300);
                 }
             }
-            
-            // 图片加载成功
+
             bgImage.onload = function() {
                 document.body.style.backgroundImage = `url('${bgUrl}')`;
                 hideLoading();
             };
-            
-            // JPG 加载失败，尝试 PNG
+
             bgImage.onerror = function() {
                 const pngPath = imageFolder + randomNum + '.png';
                 const pngImage = new Image();
@@ -611,21 +607,17 @@
                 };
                 
                 pngImage.onerror = function() {
-                    // PNG 也加载失败，使用渐变背景
                     document.body.style.background = 'linear-gradient(135deg, #ffe6f0, #ffb3d9)';
                     hideLoading();
                 };
             };
-            
-            // 超时处理：如果 15 秒后图片还没加载完成，先隐藏加载动画
+
             setTimeout(() => {
                 const loading = document.getElementById('Ciallo-loading');
                 if (loading && loading.style.display !== 'none') {
-                    // 图片还在加载中，先显示渐变背景
                     document.body.style.background = 'linear-gradient(135deg, #ffe6f0, #ffb3d9)';
                     hideLoading();
-                    
-                    // 图片加载完成后再设置背景
+
                     bgImage.onload = function() {
                         document.body.style.backgroundImage = `url('${bgUrl}')`;
                     };
