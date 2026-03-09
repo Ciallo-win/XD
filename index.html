@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html class="Ciallo" lang="zh">
+<head class="Ciallo">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ciallo～(∠・ω< )⌒★</title>
+    <link rel="icon" href="./static/img/favicon.ico">
+    <meta name="keywords" content="Ciallo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/root.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d9 100%);
+            background-image: url('http://api.escateam.icu/pc/index.php?');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Ubuntu', 'Pacifico', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-image: url('http://api.escateam.icu/mm/index.php?');
+            }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            z-index: -1;
+        }
+
+        .Ciallo-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(30px) saturate(200%);
+            -webkit-backdrop-filter: blur(30px) saturate(200%);
+            border-radius: 60px;
+            padding: 40px 30px 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 30px 50px rgba(255, 126, 185, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .hero-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-logo {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px;
+            background: url('./static/img/logo.png') center/contain no-repeat;
+            filter: drop-shadow(0 10px 25px rgba(255, 126, 185, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-title {
+            font-size: 48px;
+            color: #ff4d94;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 20px white, 0 0 30px rgba(255, 126, 185, 0.3);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .gradientText {
+            background: linear-gradient(45deg, #ff4d94, #ff7eb9, #ffb3d9, #ff7eb9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #3a2a33;
+            margin: 20px auto 10px;
+            line-height: 1.8;
+            text-align: center;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
+            background: rgba(255, 240, 245, 0.5);
+            padding: 15px 30px;
+            border-radius: 60px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: inline-block;
+            max-width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 20px rgba(255, 126, 185, 0.2);
+        }
+
+        .info-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(15px) saturate(160%);
+            -webkit-backdrop-filter: blur(15px) saturate(160%);
+            border-radius: 45px;
+            padding: 18px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 28px rgba(255, 126, 185, 0.15);
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 15px 35px rgba(255, 126, 185, 0.25);
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: #4a2e3a;
+            font-weight: 500;
+            text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.25);
+            padding: 8px 22px;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.2s ease;
+        }
+        .location-item:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.02);
+        }
+
+        .location-item svg {
+            width: 22px;
+            height: 22px;
+            fill: #ff4d94;
+            filter: drop-shadow(0 2px 4px rgba(255, 126, 185, 0.3));
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .tag-item {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #b34b7a;
+            padding: 7px 20px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(255, 126, 185, 0.1);
+            transition: all 0.2s;
+        }
+        .tag-item:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #ff4d94;
+            transform: scale(1.05);
+        }
+
+        .time-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .time-container ul {
+            list-style: none;
+            padding: 8px 25px;
+            background: rgba(255, 215, 235, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 60px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .time-container li {
+            font-size: 15px;
+            color: #a04a6f;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            text-shadow: 0 1px 5px white;
+            transition: transform 0.2s;
+        }
+        .time-container li:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-section {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(18px) saturate(180%);
+            -webkit-backdrop-filter: blur(18px) saturate(180%);
+            border-radius: 50px;
+            padding: 20px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 30px rgba(255, 126, 185, 0.2);
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 20px 40px rgba(255, 126, 185, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .contact-title {
+            text-align: center;
+            font-size: 18px;
+            color: #ff4d94;
+            margin-bottom: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .contact-title span {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 5px 15px;
+            border-radius: 40px;
+            font-size: 14px;
+            color: #b34b7a;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            padding: 12px 28px;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            min-width: 200px;
+            justify-content: center;
+        }
+        .contact-item:hover {
+            background: rgba(255, 126, 185, 0.25);
+            transform: scale(1.05) translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 12px 25px rgba(255, 126, 185, 0.3);
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #ff4d94;
+            filter: drop-shadow(0 3px 5px rgba(255, 126, 185, 0.4));
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-label {
+            font-size: 12px;
+            opacity: 0.5;
+            color: #5a3a44;
+            letter-spacing: 0.5px;
+        }
+        .contact-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #4a2a38;
+            text-shadow: 0 1px 5px white;
+            word-break: break-all;
+        }
+        .contact-item:hover .contact-value {
+            color: #ff4d94;
+        }
+
+        .contact-item.qq:hover .contact-icon svg {
+            fill: #1e6df2;
+        }
+        .contact-item.bilibili:hover .contact-icon svg {
+            fill: #fb7299;
+        }
+
+        footer {
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 14px;
+            color: #5a3a44;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 60px;
+            margin-top: 25px;
+            width: 100%;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s;
+        }
+        footer:hover {
+            background: rgba(255, 255, 255, 0.45);
+        }
+        footer a {
+            color: #ff7eb9;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: #ff4d94;
+            text-decoration: underline;
+        }
+
+        .tc {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(15px);
+        }
+        .tc-main {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            padding: 25px;
+            border-radius: 50px;
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+        .tc-img {
+            max-width: 100%;
+            max-height: 75vh;
+            border-radius: 30px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .Ciallo-main { padding: 15px; }
+            .hero-section { padding: 30px 20px 25px; }
+            .hero-title { font-size: 42px; }
+            .hero-description { font-size: 16px; padding: 12px 20px; }
+            .location-info { gap: 15px; }
+            .location-item { font-size: 14px; padding: 6px 15px; }
+            .contact-items { gap: 20px; }
+            .contact-item { padding: 10px 20px; min-width: 160px; }
+            .contact-value { font-size: 14px; }
+            .time-container ul { gap: 10px 15px; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title { font-size: 36px; }
+            .contact-item { min-width: 140px; padding: 8px 16px; }
+            .contact-icon svg { width: 24px; height: 24px; }
+        }
+        
+        @media (max-width: 360px) {
+            .hero-title { font-size: 32px; }
+            .hero-description { font-size: 14px; }
+            .contact-item { flex-direction: column; text-align: center; gap: 5px; min-width: 120px; }
+        }
+
+        #Ciallo-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffe6f0, #ffb3d9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.3s;
+        }
+        #Ciallo-loading-center {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 126, 185, 0.3);
+            border-top-color: #ff7eb9;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .Ciallo-main { animation: fadeIn 0.6s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link rel="preload" as="image" href="http://api.escateam.icu/mm/index.php?" media="(max-width: 768px)">
+</head>
+
+<body>
+    <div id="Ciallo-loading">
+        <div id="Ciallo-loading-center"></div>
+    </div>
+
+    <div class="Ciallo-main">
+        <div class="hero-section">
+            <div class="hero-logo"></div>
+            <div class="hero-title">
+                <span class="gradientText">Ciallo～</span>(∠・ω< )⌒★
+            </div>
+            <div class="hero-description">
+                多少事，从来急；天地转，光阴迫。<br>一万年太久，只争朝夕。
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-card">
+                <div class="location-info">
+                    <div class="location-item">
+                        <svg viewBox="0 0 1024 1024"><path d="M512 249.976471c-99.388235 0-180.505882 81.317647-180.505882 180.505882s81.317647 180.505882 180.505882 180.505882 180.505882-81.317647 180.505882-180.505882-81.317647-180.505882-180.505882-180.505882z m0 301.17647c-66.258824 0-120.470588-54.211765-120.470588-120.470588s54.211765-120.470588 120.470588-120.470588 120.470588 54.211765 120.470588 120.470588-54.211765 120.470588-120.470588 120.470588z M512 39.152941c-216.847059 0-391.529412 174.682353-391.529412 391.529412 0 349.364706 391.529412 572.235294 391.529412 572.235294s391.529412-222.870588 391.529412-572.235294c0-216.847059-174.682353-391.529412-391.529412-391.529412z m0 891.482353C424.658824 873.411765 180.505882 686.682353 180.505882 430.682353c0-183.717647 147.576471-331.294118 331.294118-331.294118s331.294118 147.576471 331.294118 331.294118c0 256-243.952941 442.729412-331.294118 499.952941z"/></svg>
+                        广西
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="tags-container">
+                    <span class="tag-item">网瘾</span>
+                    <span class="tag-item">小学生</span>
+                    <span class="tag-item">网页</span>
+                    <span class="tag-item">Python</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="time-container">
+                    <ul>
+                        <li>今日摆烂</li>
+                        <li>明日再说</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-card">
+                <div class="contact-title">
+                    找到我
+                    <span>欢迎联系</span>
+                </div>
+                <div class="contact-items">
+                    <a class="contact-item qq" onclick="pop('./static/img/qq.png')" title="点击查看QQ二维码">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 1024 1024">
+                                <path d="M824.8 613.2c-16-51.4-34.4-94.8-54.4-130.4 6.8-32 10.4-66 10.4-102 0-164.4-100.4-282-268.4-282-168 0-268.4 117.6-268.4 282 0 36 3.6 70 10.4 102-20 35.6-38.4 79-54.4 130.4-27.2 87.2-34 164.8-20 216 8 30.8 22.4 48.4 40.8 54 30 9.2 69.2-10.4 101.2-45.6 26 36 60.8 61.2 101.2 70.4-20.4 18-33.2 44-33.2 73.2 0 54 44.8 98 100 98s100-44 100-98c0-29.2-12.8-55.2-33.2-73.2 40.4-9.2 75.2-34.4 101.2-70.4 32 35.2 71.2 54.8 101.2 45.6 18.4-5.6 32.8-23.2 40.8-54 14-51.2 7.2-128.8-20-216z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">QQ</span>
+                            <span class="contact-value">3688442118</span>
+                        </div>
+                    </a>
+                    
+                    <a class="contact-item bilibili" href="https://space.bilibili.com/3493295577631498" target="_blank" title="打开B站空间">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 1024 1024">
+                                <path d="M332.8 204.8h-25.6c-19.2 0-32 12.8-32 32v38.4h83.2v-38.4c0-19.2-12.8-32-32-32zM678.4 204.8h-25.6c-19.2 0-32 12.8-32 32v38.4h83.2v-38.4c-1.6-19.2-14.4-32-25.6-32zM832 332.8v384c0 64-51.2 115.2-115.2 115.2H307.2c-64 0-115.2-51.2-115.2-115.2v-384c0-64 51.2-115.2 115.2-115.2h409.6c64 0 115.2 51.2 115.2 115.2zM704 640c0-27.2-22.4-48-48-48s-48 22.4-48 48 22.4 48 48 48 48-20.8 48-48zM416 640c0-27.2-22.4-48-48-48s-48 22.4-48 48 22.4 48 48 48 48-20.8 48-48z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">BiliBili</span>
+                            <span class="contact-value">3493295577631498</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 <a href="#">Ciallo</a> · <a href="https://156blog.netlify.app" target="_blank" rel="noopener">友情链接</a> · <a href="game.html" target="_blank" rel="noopener">小游戏</a>
+        </footer>
+    </div>
+
+    <div class="tc">
+        <div class="tc-main">
+            <img class="tc-img" src="" alt="预览">
+        </div>
+    </div>
+
+    <script src="./static/js/script.js"></script>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const bgImage = new Image();
+            const isMobile = window.innerWidth <= 768;
+            const bgUrl = isMobile 
+                ? 'http://api.escateam.icu/mm/index.php?'
+                : 'http://api.escateam.icu/pc/index.php?';
+            
+            bgImage.onload = function() {
+                document.body.style.backgroundImage = `url('${bgUrl}')`;
+                const loading = document.getElementById('Ciallo-loading');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 300);
+                }
+            };
+            
+            bgImage.src = bgUrl;
+            
+            setTimeout(() => {
+                const loading = document.getElementById('Ciallo-loading');
+                if (loading && loading.style.display !== 'none') {
+                    document.body.style.backgroundImage = `url('${bgUrl}')`;
+                    loading.style.opacity = '0';
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 300);
+                }
+            }, 15000);
+        });
+
+        function pop(imgSrc) {
+            var tc = document.querySelector('.tc');
+            var tcImg = document.querySelector('.tc-img');
+            if (tc && tcImg) {
+                tcImg.src = imgSrc;
+                tc.style.display = 'flex';
+            }
+        }
+
+        document.querySelector('.tc')?.addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('tc-main')) {
+                this.style.display = 'none';
+            }
+        });
+
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.classList.contains('bilibili')) {
+                    return;
+                }
+                if (this.classList.contains('qq')) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        if (window.innerWidth <= 768) {
+            document.body.style.backgroundImage = "url('http://api.escateam.icu/mm/index.php?')";
+        }
+    </script>
+</body>
+</html>
