@@ -578,12 +578,25 @@
         window.addEventListener('DOMContentLoaded', function() {
             const bgImage = new Image();
             const isMobile = window.innerWidth <= 768;
-            const bgUrl = isMobile 
-                ? 'http://api.escateam.icu/mm/index.php?'
-                : 'http://api.escateam.icu/pc/index.php?';
+            const imageFolder = isMobile ? './static/backscreen/phone/' : './static/backscreen/pc/';
+            const imageCount = 10;
+            const randomNum = Math.floor(Math.random() * imageCount) + 1;
+            const bgUrl = imageFolder + randomNum + '.jpg';
             
             bgImage.onload = function() {
                 document.body.style.backgroundImage = `url('${bgUrl}')`;
+                const loading = document.getElementById('Ciallo-loading');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 300);
+                }
+            };
+            
+            bgImage.onerror = function() {
+                const pngPath = imageFolder + randomNum + '.png';
+                document.body.style.backgroundImage = `url('${pngPath}')`;
                 const loading = document.getElementById('Ciallo-loading');
                 if (loading) {
                     loading.style.opacity = '0';
@@ -598,7 +611,8 @@
             setTimeout(() => {
                 const loading = document.getElementById('Ciallo-loading');
                 if (loading && loading.style.display !== 'none') {
-                    document.body.style.backgroundImage = `url('${bgUrl}')`;
+                    const fallbackUrl = imageFolder + randomNum + '.png';
+                    document.body.style.backgroundImage = `url('${fallbackUrl}')`;
                     loading.style.opacity = '0';
                     setTimeout(() => {
                         loading.style.display = 'none';
@@ -634,7 +648,11 @@
         });
 
         if (window.innerWidth <= 768) {
-            document.body.style.backgroundImage = "url('http://api.escateam.icu/mm/index.php?')";
+            const isMobile = true;
+            const imageFolder = './static/backscreen/phone/';
+            const imageCount = 10;
+            const randomNum = Math.floor(Math.random() * imageCount) + 1;
+            document.body.style.backgroundImage = `url('${imageFolder}${randomNum}.jpg')`;
         }
     </script>
 </body>
