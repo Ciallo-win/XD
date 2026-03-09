@@ -50,21 +50,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            max-width: 800px;
+            min-height: 100vh;            padding: 10px;
+            max-width: 400px;
             margin: 0 auto;
+            transform-origin: top center;
         }
 
         .hero-section {
             width: 100%;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(30px) saturate(200%);
-            -webkit-backdrop-filter: blur(30px) saturate(200%);
-            border-radius: 60px;
-            padding: 40px 30px 35px;
-            margin-bottom: 25px;
-            box-shadow: 0 30px 50px rgba(255, 126, 185, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 30px;
+            padding: 20px 15px 17px;
+            margin-bottom: 17px;
+            box-shadow: 0 30px 50px rgba(255, 126, 185, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.5);
             text-align: center;
             transition: transform 0.3s ease;
@@ -74,9 +74,9 @@
         }
 
         .hero-logo {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 15px;
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 8px;
             background: url('./static/img/logo.png') center/contain no-repeat;
             filter: drop-shadow(0 10px 25px rgba(255, 126, 185, 0.4));
             animation: float 6s ease-in-out infinite;
@@ -89,7 +89,7 @@
         }
 
         .hero-title {
-            font-size: 48px;
+            font-size: 24px;
             color: #ff4d94;
             margin-bottom: 10px;
             text-shadow: 0 4px 20px white, 0 0 30px rgba(255, 126, 185, 0.3);
@@ -114,16 +114,16 @@
         }
 
         .hero-description {
-            font-size: 18px;
+            font-size: 9px;
             color: #3a2a33;
-            margin: 20px auto 10px;
-            line-height: 1.8;
+            margin: 10px auto 5px;
+            line-height: 1.2;
             text-align: center;
             font-weight: 600;
             text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
-            background: rgba(255, 240, 245, 0.5);
-            padding: 15px 30px;
-            border-radius: 60px;
+            background: rgba(255, 240, 245, 0.05);
+            padding: 8px 15px;
+            border-radius: 30px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             display: inline-block;
@@ -136,16 +136,16 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 8px;
+            margin-bottom: 8px;
         }
 
         .info-card {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px) saturate(160%);
             -webkit-backdrop-filter: blur(15px) saturate(160%);
-            border-radius: 45px;
-            padding: 18px 22px;
+            border-radius: 23px;
+            padding: 9px 11px;
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 12px 28px rgba(255, 126, 185, 0.15);
             transition: all 0.3s ease;
@@ -167,15 +167,15 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 16px;
+            font-size: 8px;
             color: #4a2e3a;
             font-weight: 500;
             text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
             background: rgba(255, 255, 255, 0.25);
-            padding: 8px 22px;
-            border-radius: 50px;
+            padding: 5px 11px;
+            border-radius: 25px;
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.2s ease;
         }
         .location-item:hover {
@@ -184,8 +184,8 @@
         }
 
         .location-item svg {
-            width: 22px;
-            height: 22px;
+            width: 11px;
+            height: 11px;
             fill: #ff4d94;
             filter: drop-shadow(0 2px 4px rgba(255, 126, 185, 0.3));
         }
@@ -194,14 +194,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 6px;
         }
 
         .tag-item {
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             color: #b34b7a;
             padding: 7px 20px;
             border-radius: 40px;
@@ -211,7 +211,7 @@
             transition: all 0.2s;
         }
         .tag-item:hover {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             color: #ff4d94;
             transform: scale(1.05);
         }
@@ -251,16 +251,16 @@
 
         .contact-section {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.055);
             backdrop-filter: blur(18px) saturate(180%);
             -webkit-backdrop-filter: blur(18px) saturate(180%);
-            border-radius: 50px;
-            padding: 20px 25px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 15px 30px rgba(255, 126, 185, 0.2);
             transition: all 0.3s ease;
         }
@@ -272,19 +272,19 @@
 
         .contact-title {
             text-align: center;
-            font-size: 18px;
+            font-size: 9px;
             color: #ff4d94;
-            margin-bottom: 18px;
+            margin-bottom: 9px;
             font-weight: 700;
             letter-spacing: 1px;
             text-shadow: 0 2px 8px white;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 5px;
         }
         .contact-title span {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             padding: 5px 15px;
             border-radius: 40px;
             font-size: 14px;
@@ -296,43 +296,37 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 7px;
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(8px);
-            padding: 12px 28px;
-            border-radius: 60px;
+            padding: 6px 14px;
+            border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.8);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             text-decoration: none;
             color: inherit;
-            min-width: 200px;
+            min-width: 100px;
             justify-content: center;
-        }
-        .contact-item:hover {
-            background: rgba(255, 126, 185, 0.25);
-            transform: scale(1.05) translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 12px 25px rgba(255, 126, 185, 0.3);
         }
 
         .contact-icon {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .contact-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 14px;
+            height: 14px;
             fill: #ff4d94;
             filter: drop-shadow(0 3px 5px rgba(255, 126, 185, 0.4));
         }
@@ -342,13 +336,13 @@
             flex-direction: column;
         }
         .contact-label {
-            font-size: 12px;
-            opacity: 0.5;
+            font-size: 6px;
+            opacity: 0.05;
             color: #5a3a44;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.05px;
         }
         .contact-value {
-            font-size: 16px;
+            font-size: 8px;
             font-weight: 700;
             color: #4a2a38;
             text-shadow: 0 1px 5px white;
@@ -367,17 +361,17 @@
 
         footer {
             text-align: center;
-            padding: 16px 20px;
-            font-size: 14px;
+            padding: 8px 10px;
+            font-size: 7px;
             color: #5a3a44;
             background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-radius: 60px;
-            margin-top: 25px;
+            border-radius: 30px;
+            margin-top: 17px;
             width: 100%;
             font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s;
         }
         footer:hover {
@@ -438,14 +432,14 @@
         }
         
         @media (max-width: 480px) {
-            .hero-title { font-size: 36px; }
-            .contact-item { min-width: 140px; padding: 8px 16px; }
-            .contact-icon svg { width: 24px; height: 24px; }
+            .hero-title { font-size: 17px; }
+            .contact-item { min-width: 70px; padding: 4px 8px; }
+            .contact-icon svg { width: 12px; height: 12px; }
         }
         
         @media (max-width: 360px) {
-            .hero-title { font-size: 32px; }
-            .hero-description { font-size: 14px; }
+            .hero-title { font-size: 17px; }
+            .hero-description { font-size: 7px; }
             .contact-item { flex-direction: column; text-align: center; gap: 5px; min-width: 120px; }
         }
 
@@ -461,11 +455,12 @@
             justify-content: center;
             z-index: 99999;
             transition: opacity 0.3s;
+            transform-origin: top center;
         }
         #Ciallo-loading-center {
             width: 60px;
             height: 60px;
-            border: 5px solid rgba(255, 126, 185, 0.3);
+            border: 10px solid rgba(255, 126, 185, 0.3);
             border-top-color: #ff7eb9;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
@@ -474,7 +469,7 @@
         
         .Ciallo-main { animation: fadeIn 0.6s ease; }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -501,7 +496,7 @@
             <div class="info-card">
                 <div class="location-info">
                     <div class="location-item">
-                        <svg viewBox="0 0 1024 1024"><path d="M512 249.976471c-99.388235 0-180.505882 81.317647-180.505882 180.505882s81.317647 180.505882 180.505882 180.505882 180.505882-81.317647 180.505882-180.505882-81.317647-180.505882-180.505882-180.505882z m0 301.17647c-66.258824 0-120.470588-54.211765-120.470588-120.470588s54.211765-120.470588 120.470588-120.470588 120.470588 54.211765 120.470588 120.470588-54.211765 120.470588-120.470588 120.470588z M512 39.152941c-216.847059 0-391.529412 174.682353-391.529412 391.529412 0 349.364706 391.529412 572.235294 391.529412 572.235294s391.529412-222.870588 391.529412-572.235294c0-216.847059-174.682353-391.529412-391.529412-391.529412z m0 891.482353C424.658824 873.411765 180.505882 686.682353 180.505882 430.682353c0-183.717647 147.576471-331.294118 331.294118-331.294118s331.294118 147.576471 331.294118 331.294118c0 256-243.952941 442.729412-331.294118 499.952941z"/></svg>
+                        <svg viewBox="0 0 1024 1024"><path d="M512 249.976471c-99.388235 0-180.0505882 81.317647-180.0505882 180.0505882s81.317647 180.0505882 180.0505882 180.0505882 180.0505882-81.317647 180.0505882-180.0505882-81.317647-180.0505882-180.0505882-180.0505882z m0 301.17647c-66.258824 0-120.470588-54.211765-120.470588-120.470588s54.211765-120.470588 120.470588-120.470588 120.470588 54.211765 120.470588 120.470588-54.211765 120.470588-120.470588 120.470588z M512 39.152941c-216.847059 0-391.529412 174.682353-391.529412 391.529412 0 349.364706 391.529412 572.235294 391.529412 572.235294s391.529412-222.870588 391.529412-572.235294c0-216.847059-174.682353-391.529412-391.529412-391.529412z m0 891.482353C424.658824 873.411765 180.0505882 686.682353 180.0505882 430.682353c0-183.717647 147.576471-331.294118 331.294118-331.294118s331.294118 147.576471 331.294118 331.294118c0 256-243.952941 442.729412-331.294118 499.952941z"/></svg>
                         广西
                     </div>
                 </div>
@@ -576,47 +571,64 @@
     <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            const bgImage = new Image();
             const isMobile = window.innerWidth <= 768;
             const imageFolder = isMobile ? './static/backscreen/phone/' : './static/backscreen/pc/';
             const imageCount = 10;
             const randomNum = Math.floor(Math.random() * imageCount) + 1;
+            
+            // 预加载背景图片
+            const bgImage = new Image();
             const bgUrl = imageFolder + randomNum + '.jpg';
             
-            bgImage.onload = function() {
-                document.body.style.backgroundImage = `url('${bgUrl}')`;
-                const loading = document.getElementById('Ciallo-loading');
-                if (loading) {
-                    loading.style.opacity = '0';
-                    setTimeout(() => {
-                        loading.style.display = 'none';
-                    }, 300);
-                }
-            };
-            
-            bgImage.onerror = function() {
-                const pngPath = imageFolder + randomNum + '.png';
-                document.body.style.backgroundImage = `url('${pngPath}')`;
-                const loading = document.getElementById('Ciallo-loading');
-                if (loading) {
-                    loading.style.opacity = '0';
-                    setTimeout(() => {
-                        loading.style.display = 'none';
-                    }, 300);
-                }
-            };
-            
+            // 立即开始预加载图片
             bgImage.src = bgUrl;
             
+            function hideLoading() {
+                const loading = document.getElementById('Ciallo-loading');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 300);
+                }
+            }
+            
+            // 图片加载成功
+            bgImage.onload = function() {
+                document.body.style.backgroundImage = `url('${bgUrl}')`;
+                hideLoading();
+            };
+            
+            // JPG 加载失败，尝试 PNG
+            bgImage.onerror = function() {
+                const pngPath = imageFolder + randomNum + '.png';
+                const pngImage = new Image();
+                pngImage.src = pngPath;
+                
+                pngImage.onload = function() {
+                    document.body.style.backgroundImage = `url('${pngPath}')`;
+                    hideLoading();
+                };
+                
+                pngImage.onerror = function() {
+                    // PNG 也加载失败，使用渐变背景
+                    document.body.style.background = 'linear-gradient(135deg, #ffe6f0, #ffb3d9)';
+                    hideLoading();
+                };
+            };
+            
+            // 超时处理：如果 15 秒后图片还没加载完成，先隐藏加载动画
             setTimeout(() => {
                 const loading = document.getElementById('Ciallo-loading');
                 if (loading && loading.style.display !== 'none') {
-                    const fallbackUrl = imageFolder + randomNum + '.png';
-                    document.body.style.backgroundImage = `url('${fallbackUrl}')`;
-                    loading.style.opacity = '0';
-                    setTimeout(() => {
-                        loading.style.display = 'none';
-                    }, 300);
+                    // 图片还在加载中，先显示渐变背景
+                    document.body.style.background = 'linear-gradient(135deg, #ffe6f0, #ffb3d9)';
+                    hideLoading();
+                    
+                    // 图片加载完成后再设置背景
+                    bgImage.onload = function() {
+                        document.body.style.backgroundImage = `url('${bgUrl}')`;
+                    };
                 }
             }, 15000);
         });
