@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="Ciallo" lang="zh">
+<head class="Ciallo">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>下载中心 - Ciallo～(∠・ω< )⌒★</title>
+    <link rel="icon" href="./static/img/favicon.ico">
+    <meta name="keywords" content="Ciallo, 下载">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/root.css">
+    <style>
+        * {
+           box-sizing: border-box;
+           margin: 0;
+            padding: 0;
+        }
+
+       body {
+            background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d9 100%);
+            background-image: url('http://api.escateam.icu/pc/index.php?');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Ubuntu', 'Pacifico', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+           body {
+                background-image: url('http://api.escateam.icu/mm/index.php?');
+            }
+        }
+
+       body::before {
+           content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            z-index: -1;
+        }
+
+        .Ciallo-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 10px;
+           max-width: 400px;
+           margin: 0 auto;
+            transform-origin: top center;
+        }
+
+        .hero-section {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+           border-radius: 30px;
+            padding: 20px 15px 17px;
+           margin-bottom: 17px;
+           box-shadow: 0 30px 50px rgba(255, 126, 185, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+           border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .hero-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-logo {
+            width: 65px;
+            height: 65px;
+           margin: 0 auto 8px;
+            background: url('./static/img/logo.png') center/contain no-repeat;
+           filter: drop-shadow(0 10px 25px rgba(255, 126, 185, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-title {
+            font-size: 24px;
+           color: #ff4d94;
+           margin-bottom: 10px;
+            text-shadow: 0 4px 20px white, 0 0 30px rgba(255, 126, 185, 0.3);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .gradientText {
+            background: linear-gradient(45deg, #ff4d94, #ff7eb9, #ffb3d9, #ff7eb9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-description {
+            font-size: 9px;
+           color: #3a2a33;
+           margin: 10px auto 5px;
+            line-height: 1.2;
+            text-align: center;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
+            background: rgba(255, 240, 245, 0.05);
+            padding: 8px 15px;
+           border-radius: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: inline-block;
+           max-width: 90%;
+           border: 1px solid rgba(255, 255, 255, 0.8);
+           box-shadow: 0 5px 20px rgba(255, 126, 185, 0.2);
+        }
+
+        .download-section {
+            width: 100%;
+           margin-bottom: 8px;
+        }
+
+        .download-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px) saturate(160%);
+            -webkit-backdrop-filter: blur(15px) saturate(160%);
+           border-radius: 23px;
+            padding: 9px 11px;
+           border: 1px solid rgba(255, 255, 255, 0.6);
+           box-shadow: 0 12px 28px rgba(255, 126, 185, 0.15);
+            transition: all 0.3s ease;
+        }
+        .download-card:hover {
+            background: rgba(255, 255, 255, 0.6);
+           box-shadow: 0 15px 35px rgba(255, 126, 185, 0.25);
+        }
+
+        .download-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .download-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            padding: 12px 15px;
+           border-radius: 20px;
+           border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+           color: inherit;
+        }
+
+        .download-item:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.02);
+           box-shadow: 0 8px 20px rgba(255, 126, 185, 0.2);
+        }
+
+        .download-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .download-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 77, 148, 0.1);
+           border-radius: 12px;
+        }
+
+        .download-icon svg {
+            width: 18px;
+            height: 18px;
+           fill: #ff4d94;
+           filter: drop-shadow(0 2px 4px rgba(255, 126, 185, 0.3));
+        }
+
+        .download-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .download-name {
+            font-size: 10px;
+            font-weight: 700;
+           color: #4a2a38;
+            text-shadow: 0 1px 5px white;
+        }
+
+        .download-size {
+            font-size: 7px;
+           color: #8a5a6a;
+            font-weight: 500;
+        }
+
+        .download-action {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .download-btn {
+            background: rgba(255, 77, 148, 0.15);
+          color: #ff4d94;
+            padding: 6px 12px;
+          border-radius: 15px;
+            font-size: 8px;
+            font-weight: 600;
+          border: 1px solid rgba(255, 77, 148, 0.3);
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-item:hover .download-btn {
+            background: #ff4d94;
+          color: white;
+        }
+
+        .download-btn.more-link {
+            background: rgba(100, 181, 243, 0.15);
+           color: #64b5f3;
+           border: 1px solid rgba(100, 181, 243, 0.3);
+        }
+
+        .download-item:hover .download-btn.more-link {
+            background: #64b5f3;
+           color: white;
+        }
+
+        .back-home {
+            width: 100%;
+           margin-top: 5px;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            padding: 10px 20px;
+           border-radius: 20px;
+           border: 1px solid rgba(255, 255, 255, 0.8);
+           color: #ff4d94;
+            font-size: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .back-btn svg {
+            width: 14px;
+            height: 14px;
+           fill: #ff4d94;
+        }
+
+        footer {
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 7px;
+           color: #5a3a44;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+           border-radius: 30px;
+           margin-top: 17px;
+            width: 100%;
+            font-weight: 500;
+           border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+        footer:hover {
+            background: rgba(255, 255, 255, 0.45);
+        }
+        footer a {
+           color: #ff7eb9;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+           color: #ff4d94;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .Ciallo-main { padding: 15px; }
+            .hero-section { padding: 30px 20px 25px; }
+            .hero-title { font-size: 42px; }
+            .hero-description { font-size: 16px; padding: 12px 20px; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title { font-size: 17px; }
+            .download-item { padding: 10px 12px; }
+            .download-name { font-size: 9px; }
+            .download-size { font-size: 6px; }
+            .download-btn { padding: 5px 10px; font-size: 7px; }
+        }
+
+        #Ciallo-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffe6f0, #ffb3d9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.3s;
+            transform-origin: top center;
+        }
+        #Ciallo-loading-center {
+            width: 60px;
+            height: 60px;
+           border: 10px solid rgba(255, 126, 185, 0.3);
+           border-top-color: #ff7eb9;
+           border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .Ciallo-main { animation: fadeIn 0.6s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link rel="preload" as="image" href="http://api.escateam.icu/mm/index.php?" media="(max-width: 768px)">
+</head>
+
+<body>
+    <div id="Ciallo-loading">
+        <div id="Ciallo-loading-center"></div>
+    </div>
+
+    <div class="Ciallo-main">
+        <div class="hero-section">
+            <div class="hero-logo"></div>
+            <div class="hero-title">
+                <span class="gradientText">下载中心</span>(∠・ω< )⌒★
+            </div>
+            <div class="hero-description">
+                精选资源，等你下载<br>更多资源，敬请期待
+            </div>
+        </div>
+
+        <div class="download-section">
+            <div class="download-card">
+                <div class="download-list">
+                    <a href="./downloads/cs.zip" class="download-item" download>
+                        <div class="download-info">
+                            <div class="download-icon">
+                                <svg viewBox="0 0 1024 1024">
+                                    <path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 960c-247.4 0-448-200.6-448-448S64.6 64 512 64s448 200.6 448 448-200.6 448-448 448z"/>
+                                    <path d="M512 256v256H384l128 128 128-128H512V256z"/>
+                                    <path d="M512 704c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48s48-21.5 48-48v-64c0-26.5-21.5-48-48-48z"/>
+                                </svg>
+                            </div>
+                            <div class="download-details">
+                                <span class="download-name">cs.zip</span>
+                                <span class="download-size">压缩包</span>
+                            </div>
+                        </div>
+                        <div class="download-action">
+                            <a href="#" class="download-btn" onclick="event.stopPropagation(); event.preventDefault();" title="本地下载">下载</a>
+                            <a href="#" class="download-btn more-link" target="_blank" rel="noopener" title="备用链接">更多</a>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Ciallo-win/XD/releases/download/XD/Minecraft.exe" class="download-item" download>
+                        <div class="download-info">
+                            <div class="download-icon">
+                                <svg viewBox="0 0 1024 1024">
+                                    <path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 960c-247.4 0-448-200.6-448-448S64.6 64 512 64s448 200.6 448 448-200.6 448-448 448z"/>
+                                    <path d="M512 256v256H384l128 128 128-128H512V256z"/>
+                                    <path d="M512 704c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48s48-21.5 48-48v-64c0-26.5-21.5-48-48-48z"/>
+                                </svg>
+                            </div>
+                            <div class="download-details">
+                                <span class="download-name">mc.exe</span>
+                                <span class="download-size">可执行文件</span>
+                            </div>
+                        </div>
+                        <div class="download-action">
+                            <a href="#" class="download-btn" onclick="event.stopPropagation(); event.preventDefault();" title="本地下载">下载</a>
+                            <a href="https://www.123865.com/s/hUkljv-7km0v" class="download-btn more-link" target="_blank" rel="noopener" title="123 云盘">更多</a>
+                        </div>
+                    </a>
+
+                    <!-- 后续可添加更多下载项 -->
+                    <!-- 
+                    <a href="./downloads/xxx.zip" class="download-item" download>
+                        <div class="download-info">
+                            <div class="download-icon">
+                                <svg>...</svg>
+                            </div>
+                            <div class="download-details">
+                                <span class="download-name">文件名</span>
+                                <span class="download-size">文件类型 · 描述</span>
+                            </div>
+                        </div>
+                        <div class="download-action">
+                            <a href="#" class="download-btn" onclick="event.stopPropagation(); event.preventDefault();" title="本地下载">下载</a>
+                            <a href="备用链接地址" class="download-btn more-link" target="_blank" rel="noopener" title="备用下载">更多</a>
+                        </div>
+                    </a>
+                    -->
+                </div>
+            </div>
+        </div>
+
+        <div class="back-home">
+            <a href="./index.html" class="back-btn">
+                <svg viewBox="0 0 1024 1024">
+                    <path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 960c-247.4 0-448-200.6-448-448S64.6 64 512 64s448 200.6 448 448-200.6 448-448 448z"/>
+                    <path d="M288 512l224-224 45.2 45.2L406.4 480H768v64H406.4l150.8 150.8L512 736 288 512z"/>
+                </svg>
+                返回首页
+            </a>
+        </div>
+
+        <footer>
+            © 2025 <a href="#">Ciallo</a> · <a href="https://156blog.netlify.app" target="_blank" rel="noopener">友情链接</a> · <a href="game.html" target="_blank" rel="noopener">小游戏</a>
+        </footer>
+    </div>
+
+    <script src="./static/js/script.js"></script>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+           const isMobile = window.innerWidth <= 768;
+           const imageFolder = isMobile ? './static/backscreen/phone/' : './static/backscreen/pc/';
+           const imageCount = 10;
+           const randomNum = Math.floor(Math.random() * imageCount) + 1;
+
+           const bgImage = new Image();
+           const bgUrl = imageFolder + randomNum + '.jpg';
+
+            bgImage.src = bgUrl;
+            
+            function hideLoading() {
+               const loading = document.getElementById('Ciallo-loading');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 300);
+                }
+            }
+
+            bgImage.onload = function() {
+                document.body.style.backgroundImage = `url('${bgUrl}')`;
+                hideLoading();
+            };
+
+            bgImage.onerror = function() {
+               const pngPath = imageFolder + randomNum + '.png';
+               const pngImage = new Image();
+                pngImage.src = pngPath;
+                
+                pngImage.onload = function() {
+                    document.body.style.backgroundImage = `url('${pngPath}')`;
+                    hideLoading();
+                };
+                
+                pngImage.onerror = function() {
+                    document.body.style.background = 'linear-gradient(135deg, #ffe6f0, #ffb3d9)';
+                    hideLoading();
+                };
+            };
+
+            setTimeout(() => {
+               const loading = document.getElementById('Ciallo-loading');
+                if (loading && loading.style.display !== 'none') {
+                    document.body.style.background = 'linear-gradient(135deg, #ffe6f0, #ffb3d9)';
+                    hideLoading();
+
+                    bgImage.onload = function() {
+                        document.body.style.backgroundImage = `url('${bgUrl}')`;
+                    };
+                }
+            }, 15000);
+        });
+    </script>
+</body>
+</html>
